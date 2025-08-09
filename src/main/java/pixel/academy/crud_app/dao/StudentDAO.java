@@ -11,4 +11,5 @@ public interface StudentDAO {
 
     List<Student> findAll();
 
+    void update(Student theStudent);
 }
