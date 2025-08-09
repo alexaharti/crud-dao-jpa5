@@ -38,4 +38,11 @@ public class StudentDAOImplementation implements StudentDAO {
         TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student", Student.class);
         return theQuery.getResultList();
     }
+
+    @Override
+    @Transactional
+    public void update(Student theStudent) {
+        entityManager.merge(theStudent);
+
+    }
 }
